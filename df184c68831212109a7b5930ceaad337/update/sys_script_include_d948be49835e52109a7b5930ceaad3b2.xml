@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_use_case_sco.Scoped App Use Case</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>Scoped App Use Case</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var FetchUserDetails = Class.create();
+FetchUserDetails.prototype = {
+    initialize: function () {},
+
+    getUserDetails: function (email) {
+        var userGR = new GlideRecord('x_snc_use_case_sco_user_info');
+        userGR.addQuery('email', email);
+        userGR.query();
+        if (userGR.next()) {
+            return {
+                name: userGR.getValue('name'),
+                contact: userGR.getValue('contact_number'),
+                email: userGR.getValue('email')
+            };
+        }
+        return null;
+    },
+
+    type: 'FetchUserDetails'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-04 13:05:14</sys_created_on>
+        <sys_id>d948be49835e52109a7b5930ceaad3b2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Scoped App Use Case</sys_name>
+        <sys_package display_value="Use Case Scoped App" source="x_snc_use_case_sco">df184c68831212109a7b5930ceaad337</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Use Case Scoped App">df184c68831212109a7b5930ceaad337</sys_scope>
+        <sys_update_name>sys_script_include_d948be49835e52109a7b5930ceaad3b2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-04 13:05:14</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>d948be49835e52109a7b5930ceaad3b2</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-04 13:05:13</sys_created_on>
+        <sys_id>6aa93e49835e52109a7b5930ceaad39e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-04 13:05:13</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="62998ce8831212109a7b5930ceaad3b5" label="Table 1" max_length="40" name="x_snc_use_case_sco_table_1" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Name" max_length="40" name="name" type="string"/>
+        <element label="Contact Number" max_length="40" name="contact_number" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Email" max_length="40" name="email" type="string"/>
+    </element>
+</database>
